@@ -1,10 +1,14 @@
 <template>
-  <div class="container">
-    Hello World
-    <v-btn />
-    <v-btn />
-    <v-btn />
-  </div>
+  <v-container fluid>
+    <v-parallax dark src="./assets/1216505.jpg" class="parallax">
+      <v-row align="center" justify="center">
+        <v-col class="text-center" cols="12">
+          <h1 class="display-1 font-weight-thin mb-4">Vuetify.js</h1>
+          <h4 class="subheading">Build your application today!</h4>
+        </v-col>
+      </v-row>
+    </v-parallax>
+  </v-container>
 </template>
 
 <script>
@@ -19,9 +23,9 @@ export default {
 </script>
 
 <style lang="scss">
+.parallax {
+}
 .container {
-  display: flex;
-  flex: 1;
-  text-align: center;
+  padding: 0;
 }
 </style>

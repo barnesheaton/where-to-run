@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -55,7 +56,7 @@ module.exports = {
         test: /\.(png|jpg|gif|svg|woff|woff2)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]?[hash]'
+          name: '[path][name].[ext]'
         }
       }
     ]
@@ -77,6 +78,13 @@ module.exports = {
   performance: {
     hints: false
   },
+  plugins: [
+    new CopyPlugin([
+      {
+        from: 'src/assets/**/*'
+      }
+    ])
+  ],
   devtool: '#eval-source-map'
 }
 

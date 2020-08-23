@@ -15,10 +15,6 @@ app.use(webpackDevMiddleware(compiler, {
 }));
 app.use(webpackHotMiddleware(compiler));
 
-// app.use(function(req, res, next) {
-//   require('./server/app')(req, res, next);
-// });
-
 app.get('*', function(req, res, next) {
   renderApp(req.path, function(err, page) {
     if (err) return next(err);
@@ -47,12 +43,3 @@ const watcher = chokidar.watch(['server.js']);
 const port = process.env.PORT || 8080;
 app.listen(port);
 console.log(`app is listening on port: ${port}`);
-
-// const server = http.createServer(app);
-// server.listen(process.env.PORT || 3000, "localhost", function (err) {
-//   if (err) throw err;
-
-//   const addr = server.address();
-
-//   console.log("Listening at http://%s:%d", addr.address, addr.port);
-// });
