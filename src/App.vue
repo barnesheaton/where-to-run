@@ -1,12 +1,21 @@
-<template lang="pug">
+<template lang="">
   <div>
-    Hello World
+    <div></div>
+    <ul>
+      <li />
+    </ul>
+    <div></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app',
+  name: 'App',
+  methods: {
+    metho() {
+      console.log('hey')
+    }
+  }
 }
 </script>
 

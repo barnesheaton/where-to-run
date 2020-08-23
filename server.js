@@ -15,9 +15,9 @@ app.use(webpackDevMiddleware(compiler, {
 }));
 app.use(webpackHotMiddleware(compiler));
 
-app.use(function(req, res, next) {
-  require('./server/app')(req, res, next);
-});
+// app.use(function(req, res, next) {
+//   require('./server/app')(req, res, next);
+// });
 
 app.get('*', function(req, res, next) {
   renderApp(req.path, function(err, page) {
@@ -26,11 +26,11 @@ app.get('*', function(req, res, next) {
   });
 });
 
-const watcher = chokidar.watch(['server.js', './server']);
+const watcher = chokidar.watch(['server.js']);
 
 watcher.on('ready', function() {
   watcher.on('all', function() {
-    console.log("Clearing /server/ module cache from server");
+    console.log("Clearing server.js module cache from server");
     Object.keys(require.cache).forEach(function(id) {
       if (/[\/\\]server[\/\\]/.test(id)) delete require.cache[id];
     });

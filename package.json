@@ -11,8 +11,12 @@
     "server": "babel-node server.js"
   },
   "dependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "express": "^4.16.2",
     "normalize.css": "^7.0.0",
+    "prettier": "^2.0.5",
     "pug": "^2.0.0-rc.4",
     "vue": "^2.5.11",
     "vue-server-renderer": "^2.5.13"
@@ -32,6 +36,9 @@
     "chokidar": "^2.0.1",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
+    "eslint": "^5.0.1",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-vue": "^4.5.0",
     "file-loader": "^1.1.4",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
