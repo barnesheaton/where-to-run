@@ -1,11 +1,11 @@
-var config =  require('./webpack.config.server')
-var chokidar =  require('chokidar')
-var express =  require('express')
-var webpack =  require('webpack')
-var webpackDevMiddleware =  require('webpack-dev-middleware')
-var webpackHotMiddleware =  require('webpack-hot-middleware')
-var http = require('http');
-var { renderApp } = require('./src/server-renderer')
+import config from './webpack.config.cjs'
+import chokidar from 'chokidar';
+import express from 'express'
+import http from 'http'
+import webpack from 'webpack'
+import webpackDevMiddleware from 'webpack-dev-middleware'
+import webpackHotMiddleware from 'webpack-hot-middleware'
+import { renderApp } from './src/server-renderer.js'
 
 const compiler = webpack(config);
 const app = express();
@@ -28,21 +28,21 @@ app.get('*', function(req, res, next) {
 
 const watcher = chokidar.watch(['server.js']);
 
-watcher.on('ready', function() {
-  watcher.on('all', function() {
-    console.log("Clearing server.js module cache from server");
-    Object.keys(require.cache).forEach(function(id) {
-      if (/[\/\\]server[\/\\]/.test(id)) delete require.cache[id];
-    });
-  });
-});
+// watcher.on('ready', function() {
+//   watcher.on('all', function() {
+//     console.log("Clearing server.js module cache from server");
+//     Object.keys(require.cache).forEach(function(id) {
+//       if (/[\/\\]server[\/\\]/.test(id)) delete require.cache[id];
+//     });
+//   });
+// });
 
-compiler.plugin('done', function() {
-  console.log("Clearing /src/ module cache from server");
-  Object.keys(require.cache).forEach(function(id) {
-    if (/[\/\\]src[\/\\]/.test(id)) delete require.cache[id];
-  });
-});
+// compiler.plugin('done', function() {
+//   console.log("Clearing /src/ module cache from server");
+//   Object.keys(require.cache).forEach(function(id) {
+//     if (/[\/\\]src[\/\\]/.test(id)) delete require.cache[id];
+//   });
+// });
 
 const server = http.createServer(app);
 server.listen(3000, 'localhost', function(err) {

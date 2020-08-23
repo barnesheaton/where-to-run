@@ -2,6 +2,7 @@
   <div class="container">
     Hello World
     <v-btn />
+    <v-btn />
   </div>
 </template>
 
