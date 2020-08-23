@@ -44,11 +44,15 @@ const watcher = chokidar.watch(['server.js']);
 //   });
 // });
 
-const server = http.createServer(app);
-server.listen(process.env.PORT || 3000, "localhost", function (err) {
-  if (err) throw err;
+const port = process.env.PORT || 8080;
+app.listen(port);
+console.log(`app is listening on port: ${port}`);
 
-  const addr = server.address();
+// const server = http.createServer(app);
+// server.listen(process.env.PORT || 3000, "localhost", function (err) {
+//   if (err) throw err;
 
-  console.log("Listening at http://%s:%d", addr.address, addr.port);
-});
+//   const addr = server.address();
+
+//   console.log("Listening at http://%s:%d", addr.address, addr.port);
+// });
