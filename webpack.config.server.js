@@ -4,7 +4,7 @@ var webpack = require('webpack')
 module.exports = {
   entry: {
     entry: ['webpack-hot-middleware/client?name=main', './src/main.js'],
-    styles: ['webpack-hot-middleware/client?name=main', './src/styles/index.js']
+    // styles: ['webpack-hot-middleware/client?name=main', './src/styles/index.js']
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -19,7 +19,7 @@ module.exports = {
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      'styles': path.resolve(__dirname, 'src/styles/components'),
+      // 'styles': path.resolve(__dirname, 'src/styles/components'),
       'src': path.resolve(__dirname, 'src'),
       request: 'browser-request'
     },

@@ -1,10 +1,7 @@
-<template lang="">
-  <div>
-    <div></div>
-    <ul>
-      <li />
-    </ul>
-    <div></div>
+<template>
+  <div class="container">
+    Hello World
+    <v-btn />
   </div>
 </template>
 
@@ -19,4 +16,10 @@ export default {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.container {
+  display: flex;
+  flex: 1;
+  text-align: center;
+}
+</style>
