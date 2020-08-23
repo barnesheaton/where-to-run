@@ -45,10 +45,10 @@ const watcher = chokidar.watch(['server.js']);
 // });
 
 const server = http.createServer(app);
-server.listen(3000, 'localhost', function(err) {
+server.listen(process.env.PORT || 3000, "localhost", function (err) {
   if (err) throw err;
 
   const addr = server.address();
 
-  console.log('Listening at http://%s:%d', addr.address, addr.port);
+  console.log("Listening at http://%s:%d", addr.address, addr.port);
 });
