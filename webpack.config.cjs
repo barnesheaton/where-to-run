@@ -1,6 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
 const CopyPlugin = require('copy-webpack-plugin')
+const WriteFilePlugin = require('write-file-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -70,6 +71,7 @@ module.exports = {
     extensions: ['*', '.js', '.vue', '.json']
   },
   devServer: {
+    publicPath: '/',
     historyApiFallback: true,
     noInfo: false,
     overlay: true,
@@ -79,9 +81,11 @@ module.exports = {
     hints: false
   },
   plugins: [
+    new WriteFilePlugin(),
     new CopyPlugin([
       {
-        from: 'src/assets/**/*'
+        from: 'src/assets',
+        to: 'assets'
       }
     ])
   ],
