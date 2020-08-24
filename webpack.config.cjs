@@ -2,6 +2,7 @@ var path = require('path')
 var webpack = require('webpack')
 const CopyPlugin = require('copy-webpack-plugin')
 const WriteFilePlugin = require('write-file-webpack-plugin')
+const FileManagerPlugin = require('filemanager-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -81,6 +82,13 @@ module.exports = {
     hints: false
   },
   plugins: [
+    new FileManagerPlugin({
+      onStart: [
+        {
+          copy: [{ source: './src/assets', destination: '/' }]
+        }
+      ]
+    }),
     new WriteFilePlugin(),
     new CopyPlugin([
       {
