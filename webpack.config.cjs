@@ -2,7 +2,6 @@ var path = require('path')
 var webpack = require('webpack')
 const CopyPlugin = require('copy-webpack-plugin')
 const WriteFilePlugin = require('write-file-webpack-plugin')
-const FileManagerPlugin = require('filemanager-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -59,7 +58,6 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: '[path][name].[ext]',
-          outputPath: 'images',
           publicPath: 'assets'
         }
       }

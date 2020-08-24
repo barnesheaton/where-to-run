@@ -1,5 +1,5 @@
 {
-  "name": "vue-todo",
+  "name": "where-to-run",
   "type": "module",
   "description": "A Vue.js project",
   "version": "1.0.0",
@@ -29,7 +29,6 @@
     "express": "^4.16.2",
     "fibers": "^5.0.0",
     "file-loader": "^1.1.4",
-    "filemanager-webpack-plugin": "^2.0.5",
     "normalize.css": "^7.0.0",
     "prettier": "^2.0.5",
     "pug": "^2.0.0-rc.4",
@@ -39,6 +38,7 @@
     "vue-loader": "^13.0.5",
     "vue-server-renderer": "^2.5.13",
     "vue-template-compiler": "^2.4.4",
+    "vue2-google-maps": "^0.10.7",
     "vuetify": "^2.3.9",
     "webpack": "^3.6.0",
     "webpack-dev-middleware": "^2.0.5",

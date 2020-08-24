@@ -3,6 +3,7 @@ module.exports = {
   parser: "vue-eslint-parser",
   parserOptions: {
     sourceType: "module",
+    ecmaVersion: 8,
     ecmaFeatures: {
       "jsx": true
     }
