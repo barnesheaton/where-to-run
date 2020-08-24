@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <v-parallax dark src="/assets/1216505.jpg" class="parallax">
+    <v-parallax dark src="/dist/assets/1216505.jpg" class="parallax">
       <v-row align="center" justify="center">
         <v-col class="text-center" cols="12">
           <h1 class="display-1 font-weight-thin mb-4">Vuetify.js</h1>
