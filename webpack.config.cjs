@@ -58,7 +58,9 @@ module.exports = {
         test: /\.(png|jpg|gif|svg|woff|woff2)$/,
         loader: 'file-loader',
         options: {
-          name: '[path][name].[ext]'
+          name: '[path][name].[ext]',
+          outputPath: 'images',
+          publicPath: 'assets'
         }
       }
     ]
@@ -82,20 +84,13 @@ module.exports = {
     hints: false
   },
   plugins: [
-    new FileManagerPlugin({
-      onStart: [
-        {
-          copy: [{ source: './src/assets', destination: '/' }]
-        }
-      ]
-    }),
-    new WriteFilePlugin(),
     new CopyPlugin([
       {
         from: path.resolve(__dirname, 'src/assets'),
-        to: path.resolve(__dirname, 'assets')
+        to: 'assets'
       }
-    ])
+    ]),
+    new WriteFilePlugin()
   ],
   devtool: '#eval-source-map'
 }
